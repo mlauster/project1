@@ -1,6 +1,6 @@
 within A1_North_Template;
 model A1NorthTemplate
-  Annex60.BoundaryConditions.SolarIrradiation.DiffusePerez HDifTil[3](
+  AixLib.BoundaryConditions.SolarIrradiation.DiffusePerez HDifTil[3](
     each outSkyCon=true,
     each outGroCon=true,
     til={1.5707963267948966, 1.5707963267948966, 0.0},
@@ -8,16 +8,16 @@ model A1NorthTemplate
     azi={0.0, 1.5707963267948966, 0.0})
     "Calculates diffuse solar radiation on titled surface for all directions"
     annotation (Placement(transformation(extent={{46,134},{66,154}})));
-  Annex60.BoundaryConditions.SolarIrradiation.DirectTiltedSurface HDirTil[3](
+  AixLib.BoundaryConditions.SolarIrradiation.DirectTiltedSurface HDirTil[3](
     til={1.5707963267948966, 1.5707963267948966, 0.0},
     each lat = 0.8861990609344351,
     azi={0.0, 1.5707963267948966, 0.0})
     "Calculates direct solar radiation on titled surface for all directions"
     annotation (Placement(transformation(extent={{46,166},{66,186}})));
-  Annex60.ThermalZones.ReducedOrder.SolarGain.CorrectionGDoublePane corGDoublePane(n=3, UWin=1.6922685420811547)
+  AixLib.ThermalZones.ReducedOrder.SolarGain.CorrectionGDoublePane corGDoublePane(n=3, UWin=1.6922685420811547)
     "Correction factor for solar transmission"
     annotation (Placement(transformation(extent={{120,168},{140,188}})));
-  Annex60.ThermalZones.ReducedOrder.RC.TwoElements livingRoom(
+  AixLib.ThermalZones.ReducedOrder.RC.TwoElements livingRoom(
     redeclare package Medium = Modelica.Media.Air.DryAirNasa,
     VAir=4228.0,
     alphaExt=7.699999999999999,
@@ -43,7 +43,7 @@ model A1NorthTemplate
     ATransparent={76.6,3.15,0.0},
     AExt={102.32,0.0,72.86}) "Thermal zone"
     annotation (Placement(transformation(extent={{158,112},{206,148}})));
-  Annex60.ThermalZones.ReducedOrder.EquivalentAirTemperature.VDI6007WithWindow eqAirTemp(
+  AixLib.ThermalZones.ReducedOrder.EquivalentAirTemperature.VDI6007WithWindow eqAirTemp(
     n=3,
     wfGro=0.31987589104017633,
     wfWall={0.446092670772839, 0.0, 0.23403143818698469},
@@ -108,13 +108,13 @@ model A1NorthTemplate
     extrapolation=Modelica.Blocks.Types.Extrapolation.Periodic) "Table with profiles for persons (radiative and convective) and machines
     (convective)"
     annotation (Placement(transformation(extent={{120,54},{136,70}})));
-  Annex60.BoundaryConditions.WeatherData.ReaderTMY3 weaDat1(
-    calTSky=Annex60.BoundaryConditions.Types.SkyTemperatureCalculation.HorizontalRadiation,
+  AixLib.BoundaryConditions.WeatherData.ReaderTMY3 weaDat1(
+    calTSky=AixLib.BoundaryConditions.Types.SkyTemperatureCalculation.HorizontalRadiation,
     computeWetBulbTemperature=false,
-    filNam="modelica://Annex60/Resources/weatherdata/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.mos")
+    filNam="modelica://AixLib/Resources/weatherdata/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.mos")
     "Weather data reader"
     annotation (Placement(transformation(extent={{-14,-16},{6,4}})));
-  Annex60.BoundaryConditions.SolarIrradiation.DiffusePerez HDifTil1[
+  AixLib.BoundaryConditions.SolarIrradiation.DiffusePerez HDifTil1[
                                                                    2](
     each outSkyCon=true,
     each outGroCon=true,
@@ -123,18 +123,18 @@ model A1NorthTemplate
     azi={3.141592653589793, 0.0})
     "Calculates diffuse solar radiation on titled surface for all directions"
     annotation (Placement(transformation(extent={{44,-92},{64,-72}})));
-  Annex60.BoundaryConditions.SolarIrradiation.DirectTiltedSurface HDirTil1[
+  AixLib.BoundaryConditions.SolarIrradiation.DirectTiltedSurface HDirTil1[
                                                                           2](
     til={1.5707963267948966, 0.0},
     each lat = 0.8861990609344351,
     azi={3.141592653589793, 0.0})
     "Calculates direct solar radiation on titled surface for all directions"
     annotation (Placement(transformation(extent={{44,-60},{64,-40}})));
-  Annex60.ThermalZones.ReducedOrder.SolarGain.CorrectionGDoublePane corGDoublePane1(
+  AixLib.ThermalZones.ReducedOrder.SolarGain.CorrectionGDoublePane corGDoublePane1(
                                                                                    n=2, UWin=1.692268542081155)
     "Correction factor for solar transmission"
     annotation (Placement(transformation(extent={{118,-58},{138,-38}})));
-  Annex60.ThermalZones.ReducedOrder.RC.TwoElements bedRoom(
+  AixLib.ThermalZones.ReducedOrder.RC.TwoElements bedRoom(
     redeclare package Medium = Modelica.Media.Air.DryAirNasa,
     VAir=3297.0,
     alphaExt=7.699999999999999,
@@ -160,7 +160,7 @@ model A1NorthTemplate
     ATransparent={37.2,0.0},
     AExt={115.12,56.82}) "Thermal zone"
     annotation (Placement(transformation(extent={{156,-114},{204,-78}})));
-  Annex60.ThermalZones.ReducedOrder.EquivalentAirTemperature.VDI6007WithWindow eqAirTemp1(
+  AixLib.ThermalZones.ReducedOrder.EquivalentAirTemperature.VDI6007WithWindow eqAirTemp1(
     n=2,
     wfGro=0.26712232530640906,
     wfWall={0.5374424333566357, 0.19543524133695528},
@@ -229,12 +229,12 @@ model A1NorthTemplate
     extrapolation=Modelica.Blocks.Types.Extrapolation.Periodic) "Table with profiles for persons (radiative and convective) and machines
     (convective)"
     annotation (Placement(transformation(extent={{118,-172},{134,-156}})));
-  Annex60.BoundaryConditions.WeatherData.Bus weaBus1
+  AixLib.BoundaryConditions.WeatherData.Bus weaBus1
                                                     "Weather data bus"
     annotation (Placement(
     transformation(extent={{12,-122},{46,-90}}), iconTransformation(
     extent={{-70,-12},{-50,8}})));
-  Annex60.BoundaryConditions.SolarIrradiation.DiffusePerez HDifTil2[
+  AixLib.BoundaryConditions.SolarIrradiation.DiffusePerez HDifTil2[
                                                                    2](
     each outSkyCon=true,
     each outGroCon=true,
@@ -243,18 +243,18 @@ model A1NorthTemplate
     azi={3.141592653589793, 0.0})
     "Calculates diffuse solar radiation on titled surface for all directions"
     annotation (Placement(transformation(extent={{-190,-92},{-170,-72}})));
-  Annex60.BoundaryConditions.SolarIrradiation.DirectTiltedSurface HDirTil2[
+  AixLib.BoundaryConditions.SolarIrradiation.DirectTiltedSurface HDirTil2[
                                                                           2](
     til={1.5707963267948966, 0.0},
     each lat = 0.8861990609344351,
     azi={3.141592653589793, 0.0})
     "Calculates direct solar radiation on titled surface for all directions"
     annotation (Placement(transformation(extent={{-190,-60},{-170,-40}})));
-  Annex60.ThermalZones.ReducedOrder.SolarGain.CorrectionGDoublePane corGDoublePane2(
+  AixLib.ThermalZones.ReducedOrder.SolarGain.CorrectionGDoublePane corGDoublePane2(
                                                                                    n=2, UWin=1.692268542081155)
     "Correction factor for solar transmission"
     annotation (Placement(transformation(extent={{-116,-58},{-96,-38}})));
-  Annex60.ThermalZones.ReducedOrder.RC.TwoElements sanitaryRooms(
+  AixLib.ThermalZones.ReducedOrder.RC.TwoElements sanitaryRooms(
     redeclare package Medium = Modelica.Media.Air.DryAirNasa,
     VAir=609.0,
     alphaExt=7.699999999999999,
@@ -280,7 +280,7 @@ model A1NorthTemplate
     ATransparent={5.4,0.0},
     AExt={23.44,10.5}) "Thermal zone"
     annotation (Placement(transformation(extent={{-78,-114},{-30,-78}})));
-  Annex60.ThermalZones.ReducedOrder.EquivalentAirTemperature.VDI6007WithWindow eqAirTemp2(
+  AixLib.ThermalZones.ReducedOrder.EquivalentAirTemperature.VDI6007WithWindow eqAirTemp2(
     n=2,
     wfGro=0.25326050645352904,
     wfWall={0.5614460024723372, 0.18529349107413376},
